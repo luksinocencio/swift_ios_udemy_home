@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E8402ADF2C125CB200F1AB51 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E8402ADE2C125CB200F1AB51 /* SnapKit */; };
+		E8402AE82C12602800F1AB51 /* Extension+UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8402AE72C12602800F1AB51 /* Extension+UICollectionViewCell.swift */; };
+		E8402AEA2C12603D00F1AB51 /* Extension+Decimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8402AE92C12603D00F1AB51 /* Extension+Decimal.swift */; };
+		E8402AEC2C12605200F1AB51 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8402AEB2C12605200F1AB51 /* Extension+String.swift */; };
+		E8402AEE2C1260D700F1AB51 /* HomeUIModelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8402AED2C1260D700F1AB51 /* HomeUIModelHelper.swift */; };
+		E8402AF22C12615600F1AB51 /* UIHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8402AF12C12615600F1AB51 /* UIHomeModel.swift */; };
+		E8402AF42C12619300F1AB51 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8402AF32C12619300F1AB51 /* Category.swift */; };
+		E8402AF62C1261A800F1AB51 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8402AF52C1261A800F1AB51 /* APIResponse.swift */; };
+		E8402AF82C1261F800F1AB51 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8402AF72C1261F800F1AB51 /* CourseView.swift */; };
+		E8402AFA2C12620B00F1AB51 /* ReviewRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8402AF92C12620B00F1AB51 /* ReviewRatingView.swift */; };
+		E8402AFC2C12622100F1AB51 /* UdemyBusinessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8402AFB2C12622100F1AB51 /* UdemyBusinessView.swift */; };
+		E8402AFE2C12622F00F1AB51 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8402AFD2C12622F00F1AB51 /* CategoriesView.swift */; };
+		E8402B002C12623D00F1AB51 /* MainBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8402AFF2C12623D00F1AB51 /* MainBannerView.swift */; };
+		E8402B022C12624C00F1AB51 /* PlaceholderImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8402B012C12624C00F1AB51 /* PlaceholderImageView.swift */; };
+		E8402B042C12625B00F1AB51 /* FeatureCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8402B032C12625B00F1AB51 /* FeatureCourseView.swift */; };
+		E8402B062C12627200F1AB51 /* HomeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8402B052C12627200F1AB51 /* HomeCollectionView.swift */; };
 		E89D89BC2C11838D00CAA39D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D89BB2C11838D00CAA39D /* AppDelegate.swift */; };
 		E89D89BE2C11838D00CAA39D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D89BD2C11838D00CAA39D /* SceneDelegate.swift */; };
 		E89D89C02C11838D00CAA39D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89D89BF2C11838D00CAA39D /* ViewController.swift */; };
@@ -16,6 +32,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E8402AE72C12602800F1AB51 /* Extension+UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UICollectionViewCell.swift"; sourceTree = "<group>"; };
+		E8402AE92C12603D00F1AB51 /* Extension+Decimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Decimal.swift"; sourceTree = "<group>"; };
+		E8402AEB2C12605200F1AB51 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		E8402AED2C1260D700F1AB51 /* HomeUIModelHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUIModelHelper.swift; sourceTree = "<group>"; };
+		E8402AF02C1260F700F1AB51 /* payload.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = payload.json; sourceTree = "<group>"; };
+		E8402AF12C12615600F1AB51 /* UIHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHomeModel.swift; sourceTree = "<group>"; };
+		E8402AF32C12619300F1AB51 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		E8402AF52C1261A800F1AB51 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		E8402AF72C1261F800F1AB51 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
+		E8402AF92C12620B00F1AB51 /* ReviewRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRatingView.swift; sourceTree = "<group>"; };
+		E8402AFB2C12622100F1AB51 /* UdemyBusinessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdemyBusinessView.swift; sourceTree = "<group>"; };
+		E8402AFD2C12622F00F1AB51 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		E8402AFF2C12623D00F1AB51 /* MainBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBannerView.swift; sourceTree = "<group>"; };
+		E8402B012C12624C00F1AB51 /* PlaceholderImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderImageView.swift; sourceTree = "<group>"; };
+		E8402B032C12625B00F1AB51 /* FeatureCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCourseView.swift; sourceTree = "<group>"; };
+		E8402B052C12627200F1AB51 /* HomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionView.swift; sourceTree = "<group>"; };
 		E89D89B82C11838D00CAA39D /* ios-udemy-home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-udemy-home.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89D89BB2C11838D00CAA39D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E89D89BD2C11838D00CAA39D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,12 +63,92 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8402ADF2C125CB200F1AB51 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E8402AE02C125F2000F1AB51 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E89D89BB2C11838D00CAA39D /* AppDelegate.swift */,
+				E89D89BD2C11838D00CAA39D /* SceneDelegate.swift */,
+				E89D89C12C11838D00CAA39D /* Main.storyboard */,
+				E89D89C42C11838E00CAA39D /* Assets.xcassets */,
+				E89D89C62C11838E00CAA39D /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E8402AE12C125FA100F1AB51 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E8402AE72C12602800F1AB51 /* Extension+UICollectionViewCell.swift */,
+				E8402AE92C12603D00F1AB51 /* Extension+Decimal.swift */,
+				E8402AEB2C12605200F1AB51 /* Extension+String.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E8402AE22C125FAC00F1AB51 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E8402B052C12627200F1AB51 /* HomeCollectionView.swift */,
+				E89D89BF2C11838D00CAA39D /* ViewController.swift */,
+				E8402AEF2C1260DF00F1AB51 /* JSON */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E8402AE32C125FB500F1AB51 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E8402AED2C1260D700F1AB51 /* HomeUIModelHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		E8402AE42C125FBC00F1AB51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E8402AF12C12615600F1AB51 /* UIHomeModel.swift */,
+				E8402AF32C12619300F1AB51 /* Category.swift */,
+				E8402AF52C1261A800F1AB51 /* APIResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E8402AE52C125FC800F1AB51 /* SwiftUIView */ = {
+			isa = PBXGroup;
+			children = (
+				E8402AF72C1261F800F1AB51 /* CourseView.swift */,
+				E8402AF92C12620B00F1AB51 /* ReviewRatingView.swift */,
+				E8402AFB2C12622100F1AB51 /* UdemyBusinessView.swift */,
+				E8402AFD2C12622F00F1AB51 /* CategoriesView.swift */,
+				E8402AFF2C12623D00F1AB51 /* MainBannerView.swift */,
+				E8402B012C12624C00F1AB51 /* PlaceholderImageView.swift */,
+				E8402B032C12625B00F1AB51 /* FeatureCourseView.swift */,
+			);
+			path = SwiftUIView;
+			sourceTree = "<group>";
+		};
+		E8402AE62C125FD100F1AB51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E8402AEF2C1260DF00F1AB51 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				E8402AF02C1260F700F1AB51 /* payload.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		E89D89AF2C11838D00CAA39D = {
 			isa = PBXGroup;
 			children = (
@@ -56,12 +168,13 @@
 		E89D89BA2C11838D00CAA39D /* ios-udemy-home */ = {
 			isa = PBXGroup;
 			children = (
-				E89D89BB2C11838D00CAA39D /* AppDelegate.swift */,
-				E89D89BD2C11838D00CAA39D /* SceneDelegate.swift */,
-				E89D89BF2C11838D00CAA39D /* ViewController.swift */,
-				E89D89C12C11838D00CAA39D /* Main.storyboard */,
-				E89D89C42C11838E00CAA39D /* Assets.xcassets */,
-				E89D89C62C11838E00CAA39D /* LaunchScreen.storyboard */,
+				E8402AE62C125FD100F1AB51 /* View */,
+				E8402AE52C125FC800F1AB51 /* SwiftUIView */,
+				E8402AE42C125FBC00F1AB51 /* Model */,
+				E8402AE32C125FB500F1AB51 /* Helper */,
+				E8402AE22C125FAC00F1AB51 /* Home */,
+				E8402AE12C125FA100F1AB51 /* Extension */,
+				E8402AE02C125F2000F1AB51 /* Supporting Files */,
 				E89D89C92C11838E00CAA39D /* Info.plist */,
 			);
 			path = "ios-udemy-home";
@@ -83,6 +196,9 @@
 			dependencies = (
 			);
 			name = "ios-udemy-home";
+			packageProductDependencies = (
+				E8402ADE2C125CB200F1AB51 /* SnapKit */,
+			);
 			productName = "ios-udemy-home";
 			productReference = E89D89B82C11838D00CAA39D /* ios-udemy-home.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +227,9 @@
 				Base,
 			);
 			mainGroup = E89D89AF2C11838D00CAA39D;
+			packageReferences = (
+				E8402ADD2C125CB200F1AB51 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = E89D89B92C11838D00CAA39D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,7 +257,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8402AEA2C12603D00F1AB51 /* Extension+Decimal.swift in Sources */,
+				E8402AE82C12602800F1AB51 /* Extension+UICollectionViewCell.swift in Sources */,
+				E8402AEC2C12605200F1AB51 /* Extension+String.swift in Sources */,
+				E8402AF62C1261A800F1AB51 /* APIResponse.swift in Sources */,
 				E89D89C02C11838D00CAA39D /* ViewController.swift in Sources */,
+				E8402B062C12627200F1AB51 /* HomeCollectionView.swift in Sources */,
+				E8402AF22C12615600F1AB51 /* UIHomeModel.swift in Sources */,
+				E8402B022C12624C00F1AB51 /* PlaceholderImageView.swift in Sources */,
+				E8402AF42C12619300F1AB51 /* Category.swift in Sources */,
+				E8402AFC2C12622100F1AB51 /* UdemyBusinessView.swift in Sources */,
+				E8402AFE2C12622F00F1AB51 /* CategoriesView.swift in Sources */,
+				E8402AFA2C12620B00F1AB51 /* ReviewRatingView.swift in Sources */,
+				E8402AF82C1261F800F1AB51 /* CourseView.swift in Sources */,
+				E8402B002C12623D00F1AB51 /* MainBannerView.swift in Sources */,
+				E8402AEE2C1260D700F1AB51 /* HomeUIModelHelper.swift in Sources */,
+				E8402B042C12625B00F1AB51 /* FeatureCourseView.swift in Sources */,
 				E89D89BC2C11838D00CAA39D /* AppDelegate.swift in Sources */,
 				E89D89BE2C11838D00CAA39D /* SceneDelegate.swift in Sources */,
 			);
@@ -363,6 +497,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E8402ADD2C125CB200F1AB51 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E8402ADE2C125CB200F1AB51 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8402ADD2C125CB200F1AB51 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E89D89B02C11838D00CAA39D /* Project object */;
 }
