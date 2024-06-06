@@ -1,8 +1,16 @@
-//
-//  HomeCollectionView.swift
-//  ios-udemy-home
-//
-//  Created by Lucas Inocencio on 06/06/24.
-//
+import UIKit
 
-import Foundation
+final class HomeCollectionView: UICollectionView {
+    init() {
+        super.init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setup() {
+        backgroundColor = .green
+    }
+}
