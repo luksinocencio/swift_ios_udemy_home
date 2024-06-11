@@ -1,8 +1,34 @@
-//
-//  TextHeaderCollectionViewCell.swift
-//  ios-udemy-home
-//
-//  Created by Lucas Inocencio on 06/06/24.
-//
+import SnapKit
+import UIKit
 
-import Foundation
+final class TextHeaderCollectionViewCell: UICollectionViewCell {
+    private let label = AttributedTappableLabel()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        layout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(text: String, highlightText: String?) {
+        label.setAttributedText(
+            text: text,
+            highlightedText: highlightText,
+            color: .systemIndigo, 
+            font: .systemFont(ofSize: 18, weight: .bold)
+        )
+    }
+    
+    private func layout() {
+        addSubview(label)
+        label.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        label.onTap = {
+            print(">>>>> tapped")
+        }
+    }
+}

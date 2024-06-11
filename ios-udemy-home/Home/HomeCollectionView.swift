@@ -23,7 +23,6 @@ final class HomeCollectionView: UICollectionView {
     }
     
     private func setup() {
-        backgroundColor = .green
         register(
             MainBannerCollectionViewCell.self,
             forCellWithReuseIdentifier: MainBannerCollectionViewCell.namedIdentifier
