@@ -27,6 +27,10 @@ final class HomeCollectionView: UICollectionView {
             MainBannerCollectionViewCell.self,
             forCellWithReuseIdentifier: MainBannerCollectionViewCell.namedIdentifier
         )
+        register(
+            TextHeaderCollectionViewCell.self,
+            forCellWithReuseIdentifier: TextHeaderCollectionViewCell.namedIdentifier
+        )
     }
     
     private func setupDataSource() {
@@ -37,6 +41,10 @@ final class HomeCollectionView: UICollectionView {
                 case let .mainBanner(_, imageLink, title, caption):
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainBannerCollectionViewCell.namedIdentifier, for: indexPath) as! MainBannerCollectionViewCell
                     cell.configure(imageLink: imageLink, title: title, caption: caption)
+                    return cell
+                case let .textHeader(_, text, highlightedText):
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TextHeaderCollectionViewCell.namedIdentifier, for: indexPath) as! TextHeaderCollectionViewCell
+                    cell.configure(text: text, highlightText: highlightedText)
                     return cell
                 default:
                     fatalError()
@@ -61,6 +69,8 @@ final class HomeCollectionView: UICollectionView {
             switch sectionModel.section {
             case .mainBanner:
                 return self?.makeBannerSection()
+            case .textHeader:
+                return self?.makeTextHeaderSection()
             default:
                 fatalError()
             }
@@ -75,5 +85,19 @@ final class HomeCollectionView: UICollectionView {
         let layoutSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(220))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: layoutSize, subitems: [item])
         return NSCollectionLayoutSection(group: group)
+    }
+    
+    private func makeTextHeaderSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let layoutSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(120)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: layoutSize, subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 8, trailing: 20)
+        return section
     }
 }
