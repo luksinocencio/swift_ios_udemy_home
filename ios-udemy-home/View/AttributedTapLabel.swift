@@ -63,7 +63,7 @@ class AttributedTappableLabel: UILabel {
     attributedString.addAttribute(.font, value: font, range: NSRange(location: 0, length: text.count))
     
     self.attributedText = attributedString
-    self.tapRange = (highlightedText as NSString?)?.range(of: highlightedText ?? "")
+    self.tapRange = (text as NSString?)?.range(of: highlightedText ?? "")
     self.labelFont = font
   }
   

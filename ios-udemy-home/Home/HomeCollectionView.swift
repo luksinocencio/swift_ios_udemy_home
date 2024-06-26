@@ -70,7 +70,10 @@ final class HomeCollectionView: UICollectionView {
             case .mainBanner:
                 return self?.makeBannerSection()
             case .textHeader:
-                return self?.makeTextHeaderSection()
+                guard case let .textHeader(_, text, highlightedText) = sectionModel.body.first else {
+                    return nil
+                }
+                return self?.makeTextHeaderSection(text: text, highlightedText: highlightedText)
             default:
                 fatalError()
             }
@@ -87,13 +90,18 @@ final class HomeCollectionView: UICollectionView {
         return NSCollectionLayoutSection(group: group)
     }
     
-    private func makeTextHeaderSection() -> NSCollectionLayoutSection {
+    private func makeTextHeaderSection(text: String, highlightedText: String?) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let label = AttributedTappableLabel()
+        label.setAttributedText(text: text, highlightedText: highlightedText)
+        let height = label.heightForWidth(frame.size.width)
+        
         let layoutSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(120)
+            widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(height)
         )
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: layoutSize, subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
