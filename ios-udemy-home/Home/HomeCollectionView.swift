@@ -83,7 +83,10 @@ final class HomeCollectionView: UICollectionView {
     }
     
     private func makeBannerSection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(1.0)
+        )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let layoutSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(220))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: layoutSize, subitems: [item])
@@ -92,16 +95,17 @@ final class HomeCollectionView: UICollectionView {
     
     private func makeTextHeaderSection(text: String, highlightedText: String?) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0)
+            widthDimension: .fractionalWidth(1.0), 
+             heightDimension: .fractionalHeight(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let label = AttributedTappableLabel()
         label.setAttributedText(text: text, highlightedText: highlightedText)
-        let height = label.heightForWidth(frame.size.width)
         
         let layoutSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(height)
+            widthDimension: .fractionalWidth(1.0), 
+            heightDimension: .absolute(AttributedTappableLabel.heightForWidth(frame.size.width, text: text))
         )
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: layoutSize, subitems: [item])
         let section = NSCollectionLayoutSection(group: group)

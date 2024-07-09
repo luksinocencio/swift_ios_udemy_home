@@ -73,9 +73,11 @@ class AttributedTappableLabel: UILabel {
     setAttributedText(text: text, highlightedText: "", color: .clear, font: font)
   }
   
-  func heightForWidth(_ width: CGFloat) -> CGFloat {
-    guard let font = labelFont, let text = text else { return 0 }
-    
+    static func heightForWidth(
+        _ width: CGFloat,
+        font: UIFont = .systemFont(ofSize: 18, weight: .bold),
+        text: String
+    ) -> CGFloat {
     let size = CGSize(width: width, height: .greatestFiniteMagnitude)
     let boundingRect = NSString(string: text).boundingRect(
       with: size,
