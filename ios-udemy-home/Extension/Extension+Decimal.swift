@@ -1,8 +1,10 @@
-//
-//  Extension+Decimal.swift
-//  ios-udemy-home
-//
-//  Created by Lucas Inocencio on 06/06/24.
-//
-
 import Foundation
+
+extension Decimal {
+    var priceFormat: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: "en_US")
+        return formatter.string(from: self as NSDecimalNumber) ?? String(describing: self)
+    }
+}

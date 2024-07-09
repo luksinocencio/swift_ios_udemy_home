@@ -38,7 +38,7 @@ struct HomeUIModel: Hashable {
         case textHeader(
             id: String,
             text: String,
-            highlightedText: String?
+            highlightedText: String
         )
         case udemyBusinessBanner(
             id: String,

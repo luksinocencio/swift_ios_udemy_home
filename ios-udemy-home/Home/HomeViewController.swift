@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
                     )
                 ])
         ])
-        collectionView.setupUIModel(uiModel: uiModel)
+        collectionView.setDataSource(uiModel: uiModel)
     }
     
     private func setupView() {

@@ -17,7 +17,7 @@ final class HomeCollectionView: UICollectionView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupUIModel(uiModel: HomeUIModel) {
+    func setDataSource(uiModel: HomeUIModel) {
         self.uiModel = uiModel
         self.applySnapshot()
     }
@@ -68,12 +68,12 @@ final class HomeCollectionView: UICollectionView {
             guard let sectionModel = self?.uiModel?.sectionModels[index] else { return nil }
             switch sectionModel.section {
             case .mainBanner:
-                return self?.makeBannerSection()
+                return self?.makeBannerSectionSection()
             case .textHeader:
-                guard case let .textHeader(_, text, highlightedText) = sectionModel.body.first else {
+                guard case let .textHeader(_, text, _) = sectionModel.body.first else {
                     return nil
                 }
-                return self?.makeTextHeaderSection(text: text, highlightedText: highlightedText)
+                return self?.makeTextHeaderSection(text: text)
             default:
                 fatalError()
             }
@@ -82,7 +82,7 @@ final class HomeCollectionView: UICollectionView {
         return UICollectionViewCompositionalLayout(sectionProvider: provider)
     }
     
-    private func makeBannerSection() -> NSCollectionLayoutSection {
+    private func makeBannerSectionSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1.0)
@@ -90,19 +90,17 @@ final class HomeCollectionView: UICollectionView {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let layoutSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(220))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: layoutSize, subitems: [item])
-        return NSCollectionLayoutSection(group: group)
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0)
+        return section
     }
     
-    private func makeTextHeaderSection(text: String, highlightedText: String?) -> NSCollectionLayoutSection {
+    private func makeTextHeaderSection(text: String) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0), 
              heightDimension: .fractionalHeight(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        
-        let label = AttributedTappableLabel()
-        label.setAttributedText(text: text, highlightedText: highlightedText)
-        
         let layoutSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0), 
             heightDimension: .absolute(AttributedTappableLabel.heightForWidth(frame.size.width, text: text))
