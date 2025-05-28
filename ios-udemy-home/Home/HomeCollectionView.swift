@@ -31,6 +31,10 @@ final class HomeCollectionView: UICollectionView {
             TextHeaderCollectionViewCell.self,
             forCellWithReuseIdentifier: TextHeaderCollectionViewCell.namedIdentifier
         )
+        register(
+            CourseCollectionViewCell.self,
+            forCellWithReuseIdentifier: CourseCollectionViewCell.namedIdentifier
+        )
     }
     
     private func setupDataSource() {
@@ -38,16 +42,20 @@ final class HomeCollectionView: UICollectionView {
             collectionView: self,
             cellProvider: { collectionView, indexPath, item in
                 switch item {
-                case let .mainBanner(_, imageLink, title, caption):
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainBannerCollectionViewCell.namedIdentifier, for: indexPath) as! MainBannerCollectionViewCell
-                    cell.configure(imageLink: imageLink, title: title, caption: caption)
-                    return cell
-                case let .textHeader(_, text, highlightedText):
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TextHeaderCollectionViewCell.namedIdentifier, for: indexPath) as! TextHeaderCollectionViewCell
-                    cell.configure(text: text, highlightText: highlightedText)
-                    return cell
-                default:
-                    fatalError()
+                    case let .mainBanner(_, imageLink, title, caption):
+                        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainBannerCollectionViewCell.namedIdentifier, for: indexPath) as! MainBannerCollectionViewCell
+                        cell.configure(imageLink: imageLink, title: title, caption: caption)
+                        return cell
+                    case let .textHeader(_, text, highlightedText):
+                        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TextHeaderCollectionViewCell.namedIdentifier, for: indexPath) as! TextHeaderCollectionViewCell
+                        cell.configure(text: text, highlightText: highlightedText)
+                        return cell
+                    case let .course(_, imageLink, title, author, rating, reviewCount, price, tag):
+                        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CourseCollectionViewCell.namedIdentifier, for: indexPath) as! CourseCollectionViewCell
+                        cell.configure(imageLink: imageLink, title: title, author: author, rating: rating, reviewCount: reviewCount, price: price, tag: tag)
+                        return cell
+                    default:
+                        fatalError()
                 }
             }
         )
@@ -67,15 +75,17 @@ final class HomeCollectionView: UICollectionView {
         let provider: UICollectionViewCompositionalLayoutSectionProvider = { [weak self] index, env in
             guard let sectionModel = self?.uiModel?.sectionModels[index] else { return nil }
             switch sectionModel.section {
-            case .mainBanner:
-                return self?.makeBannerSectionSection()
-            case .textHeader:
-                guard case let .textHeader(_, text, _) = sectionModel.body.first else {
-                    return nil
-                }
-                return self?.makeTextHeaderSection(text: text)
-            default:
-                fatalError()
+                case .mainBanner:
+                    return self?.makeBannerSectionSection()
+                case .textHeader:
+                    guard case let .textHeader(_, text, _) = sectionModel.body.first else {
+                        return nil
+                    }
+                    return self?.makeTextHeaderSection(text: text)
+                case .courseSwimlane:
+                    return self?.makeCourseSwimlaneSection()
+                default:
+                    fatalError()
             }
         }
         
@@ -97,17 +107,38 @@ final class HomeCollectionView: UICollectionView {
     
     private func makeTextHeaderSection(text: String) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0), 
-             heightDimension: .fractionalHeight(1.0)
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let layoutSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0), 
+            widthDimension: .fractionalWidth(1.0),
             heightDimension: .absolute(AttributedTappableLabel.heightForWidth(frame.size.width, text: text))
         )
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: layoutSize, subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 8, trailing: 20)
+        return section
+    }
+    
+    private func makeCourseSwimlaneSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(1.0)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let layoutSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(160),
+            heightDimension: .absolute(200)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: layoutSize,
+            subitems: [item]
+        )
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 10
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 20, trailing: 20)
+        section.orthogonalScrollingBehavior = .continuous
         return section
     }
 }

@@ -29,7 +29,42 @@ class HomeViewController: UIViewController {
                         text: "Newest courses in Mobile Development",
                         highlightedText: "Mobile Development"
                     )
-                ])
+                ]),
+            .init(
+                section: .courseSwimlane(id: "4432"),
+                body: [
+                    .course(
+                        id: "2223",
+                        imageLink: "https://source.unsplash.com/random/?city,night",
+                        title: "iOS & Swift: Server Driven UI Compositional Layout & SwiftUI",
+                        author: "Kelvin Fok",
+                        rating: 4.5,
+                        reviewCount: 224,
+                        price: 19.99,
+                        tag: "Bestseller"
+                    ),
+                    .course(
+                        id: "2224",
+                        imageLink: "https://source.unsplash.com/random/?city,night",
+                        title: "iOS & Swift: Server Driven UI Compositional Layout & SwiftUI",
+                        author: "Kelvin Fok",
+                        rating: 4.5,
+                        reviewCount: 224,
+                        price: 19.99,
+                        tag: "Bestseller"
+                    ),
+                    .course(
+                        id: "2225",
+                        imageLink: "https://source.unsplash.com/random/?city,night",
+                        title: "iOS & Swift: Server Driven UI Compositional Layout & SwiftUI",
+                        author: "Kelvin Fok",
+                        rating: 4.5,
+                        reviewCount: 224,
+                        price: 19.99,
+                        tag: "Bestseller"
+                    )
+                ]
+            )
         ])
         collectionView.setDataSource(uiModel: uiModel)
     }
