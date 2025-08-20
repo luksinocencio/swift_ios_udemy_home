@@ -9,7 +9,7 @@ final class HomeCollectionView: UICollectionView {
     init() {
         super.init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionViewLayout = makeCompositionLayout()
-        setup()
+        registerCells()
         setupDataSource()
     }
     
@@ -22,7 +22,7 @@ final class HomeCollectionView: UICollectionView {
         self.applySnapshot()
     }
     
-    private func setup() {
+    private func registerCells() {
         register(
             MainBannerCollectionViewCell.self,
             forCellWithReuseIdentifier: MainBannerCollectionViewCell.namedIdentifier
@@ -42,6 +42,10 @@ final class HomeCollectionView: UICollectionView {
         register(
             FeaturedCourseCollectionViewCell.self,
             forCellWithReuseIdentifier: FeaturedCourseCollectionViewCell.namedIdentifier
+        )
+        register(
+            UdemyBusinessCollectionViewCell.self,
+            forCellWithReuseIdentifier: UdemyBusinessCollectionViewCell.namedIdentifier
         )
     }
     
@@ -70,6 +74,12 @@ final class HomeCollectionView: UICollectionView {
                         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedCourseCollectionViewCell.namedIdentifier, for: indexPath) as!
                         FeaturedCourseCollectionViewCell
                         cell.configure(imageLink: imageLink, title: title, author: author, rating: rating, reviewCount: reviewCount, price: price)
+                        return cell
+                    case let .udemyBusinessBanner(_, link):
+                        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UdemyBusinessCollectionViewCell.namedIdentifier, for: indexPath) as! UdemyBusinessCollectionViewCell
+                        cell.onTap = {
+                            print(">>>> tapped on udemy Business \(link)")
+                        }
                         return cell
                     default:
                         fatalError()
@@ -105,6 +115,8 @@ final class HomeCollectionView: UICollectionView {
                     return self?.makeCategoriesSection()
                 case .featuredCourse:
                     return self?.makeFeaturedCourseSection()
+                case .udemyBusinessBanner:
+                    return self?.makeUdemyBusinessBannerSection()
                 default:
                     fatalError()
             }
@@ -181,6 +193,25 @@ final class HomeCollectionView: UICollectionView {
     }
     
     func makeFeaturedCourseSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(1.0)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let layoutSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(230)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: layoutSize, subitems: [item]
+        )
+        group.interItemSpacing = NSCollectionLayoutSpacing.fixed(10)
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 20, trailing: 20)
+        return section
+    }
+    
+    func makeUdemyBusinessBannerSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1.0)

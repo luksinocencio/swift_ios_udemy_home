@@ -130,6 +130,9 @@ class HomeViewController: UIViewController {
                     price: 19.99
                 )
             ]),
+            .init(section: .udemyBusinessBanner(id: "jfkdlsjflksjf"), body: [
+                .udemyBusinessBanner(id: "jfdihfuehdlsjf", link: "https://www.example.com/")
+            ])
         ])
         collectionView.setDataSource(uiModel: uiModel)
     }
