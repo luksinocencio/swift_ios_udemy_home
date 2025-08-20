@@ -21,7 +21,7 @@
 		E8402AFE2C12622F00F1AB51 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8402AFD2C12622F00F1AB51 /* CategoriesView.swift */; };
 		E8402B002C12623D00F1AB51 /* MainBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8402AFF2C12623D00F1AB51 /* MainBannerView.swift */; };
 		E8402B022C12624C00F1AB51 /* PlaceholderImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8402B012C12624C00F1AB51 /* PlaceholderImageView.swift */; };
-		E8402B042C12625B00F1AB51 /* FeatureCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8402B032C12625B00F1AB51 /* FeatureCourseView.swift */; };
+		E8402B042C12625B00F1AB51 /* FeaturedCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8402B032C12625B00F1AB51 /* FeaturedCourseView.swift */; };
 		E8402B062C12627200F1AB51 /* HomeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8402B052C12627200F1AB51 /* HomeCollectionView.swift */; };
 		E84E201F2C12683F00E387DD /* AttributedTapLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E201E2C12683F00E387DD /* AttributedTapLabel.swift */; };
 		E84E20212C12686C00E387DD /* MainBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E20202C12686C00E387DD /* MainBannerCollectionViewCell.swift */; };
@@ -52,7 +52,7 @@
 		E8402AFD2C12622F00F1AB51 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		E8402AFF2C12623D00F1AB51 /* MainBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBannerView.swift; sourceTree = "<group>"; };
 		E8402B012C12624C00F1AB51 /* PlaceholderImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderImageView.swift; sourceTree = "<group>"; };
-		E8402B032C12625B00F1AB51 /* FeatureCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCourseView.swift; sourceTree = "<group>"; };
+		E8402B032C12625B00F1AB51 /* FeaturedCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCourseView.swift; sourceTree = "<group>"; };
 		E8402B052C12627200F1AB51 /* HomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionView.swift; sourceTree = "<group>"; };
 		E84E201E2C12683F00E387DD /* AttributedTapLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedTapLabel.swift; sourceTree = "<group>"; };
 		E84E20202C12686C00E387DD /* MainBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBannerCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 				E8402AFD2C12622F00F1AB51 /* CategoriesView.swift */,
 				E8402AFF2C12623D00F1AB51 /* MainBannerView.swift */,
 				E8402B012C12624C00F1AB51 /* PlaceholderImageView.swift */,
-				E8402B032C12625B00F1AB51 /* FeatureCourseView.swift */,
+				E8402B032C12625B00F1AB51 /* FeaturedCourseView.swift */,
 			);
 			path = SwiftUIView;
 			sourceTree = "<group>";
@@ -229,7 +229,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					E89D89B72C11838D00CAA39D = {
 						CreatedOnToolsVersion = 15.4;
@@ -296,7 +296,7 @@
 				E84E20212C12686C00E387DD /* MainBannerCollectionViewCell.swift in Sources */,
 				E84E202B2C1268FD00E387DD /* FeaturedCourseCollectionViewCell.swift in Sources */,
 				E8402AEE2C1260D700F1AB51 /* HomeUIModelHelper.swift in Sources */,
-				E8402B042C12625B00F1AB51 /* FeatureCourseView.swift in Sources */,
+				E8402B042C12625B00F1AB51 /* FeaturedCourseView.swift in Sources */,
 				E89D89BC2C11838D00CAA39D /* AppDelegate.swift in Sources */,
 				E89D89BE2C11838D00CAA39D /* SceneDelegate.swift in Sources */,
 			);
@@ -351,6 +351,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Y65JAZKR5L;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -414,6 +415,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Y65JAZKR5L;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -442,7 +444,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y65JAZKR5L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ios-udemy-home/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -470,7 +471,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y65JAZKR5L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ios-udemy-home/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

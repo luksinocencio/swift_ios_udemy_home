@@ -27,6 +27,7 @@ struct CourseView: View {
             Text(title)
                 .font(.system(size: 12, weight: .bold, design: .default))
                 .fixedSize(horizontal: false, vertical: true)
+                .lineLimit(4)
             
             Text(author)
                 .font(.system(size: 10, weight: .regular, design: .default))
