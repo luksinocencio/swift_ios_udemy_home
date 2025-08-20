@@ -4,6 +4,8 @@ import SnapKit
 final class FeaturedCourseCollectionViewCell: UICollectionViewCell {
     private var hostingController: UIHostingController<FeaturedCourseView>!
     
+    var onTap: (() -> Void)?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -37,6 +39,9 @@ final class FeaturedCourseCollectionViewCell: UICollectionViewCell {
         hostingController.view.clipsToBounds = true
         hostingController.view.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+        hostingController.rootView.onTap =  { [weak self] in
+            self?.onTap?()
         }
     }
 }

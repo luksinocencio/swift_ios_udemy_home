@@ -9,6 +9,8 @@ struct FeaturedCourseView: View {
     let price: Decimal
     let tag: String?
     
+    var onTap:(() -> Void)?
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             AsyncImage(url: URL(string: imageLink)) { image in
@@ -51,6 +53,9 @@ struct FeaturedCourseView: View {
             }
             
             Spacer()
+        }
+        .onTapGesture {
+            onTap?()
         }
     }
 }

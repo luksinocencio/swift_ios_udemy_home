@@ -4,6 +4,8 @@ import SnapKit
 final class CourseCollectionViewCell: UICollectionViewCell {
     private var hostingController: UIHostingController<CourseView>!
     
+    var onTap: (() -> Void)?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .gray
@@ -39,6 +41,9 @@ final class CourseCollectionViewCell: UICollectionViewCell {
         hostingController.view.clipsToBounds = true
         hostingController.view.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+        hostingController.rootView.onTap = { [weak self] in
+            self?.onTap?()
         }
     }
 }

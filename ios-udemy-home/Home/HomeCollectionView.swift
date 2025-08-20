@@ -58,22 +58,34 @@ final class HomeCollectionView: UICollectionView {
                         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainBannerCollectionViewCell.namedIdentifier, for: indexPath) as! MainBannerCollectionViewCell
                         cell.configure(imageLink: imageLink, title: title, caption: caption)
                         return cell
-                    case let .textHeader(_, text, highlightedText):
+                    case let .textHeader(id, text, highlightedText):
                         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TextHeaderCollectionViewCell.namedIdentifier, for: indexPath) as! TextHeaderCollectionViewCell
                         cell.configure(text: text, highlightText: highlightedText)
+                        cell.onTap = {
+                            print(">>> textHeader link tapped: \(id) - \(highlightedText)")
+                        }
                         return cell
-                    case let .course(_, imageLink, title, author, rating, reviewCount, price, tag):
+                    case let .course(id, imageLink, title, author, rating, reviewCount, price, tag):
                         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CourseCollectionViewCell.namedIdentifier, for: indexPath) as! CourseCollectionViewCell
                         cell.configure(imageLink: imageLink, title: title, author: author, rating: rating, reviewCount: reviewCount, price: price, tag: tag)
+                        cell.onTap = {
+                            print(">>>> course tapped: \(id) - \(title)")
+                        }
                         return cell
-                    case let .categoryScroller(id: _, titles):
+                    case let .categoryScroller(id, titles):
                         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesCollectionViewCell.namedIdentifier, for: indexPath) as! CategoriesCollectionViewCell
                         cell.configure(titles: titles)
+                        cell.onTap = { title in
+                            print(">>>>> categoryScroller tapped: \(id) - \(title)")
+                        }
                         return cell
                     case let .featuredCourse(_, imageLink, title, author, rating, reviewCount, price):
                         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedCourseCollectionViewCell.namedIdentifier, for: indexPath) as!
                         FeaturedCourseCollectionViewCell
                         cell.configure(imageLink: imageLink, title: title, author: author, rating: rating, reviewCount: reviewCount, price: price)
+                        cell.onTap = {
+                            print(">>>> featuredCourse tapped: \(title)")
+                        }
                         return cell
                     case let .udemyBusinessBanner(_, link):
                         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UdemyBusinessCollectionViewCell.namedIdentifier, for: indexPath) as! UdemyBusinessCollectionViewCell
@@ -81,8 +93,6 @@ final class HomeCollectionView: UICollectionView {
                             print(">>>> tapped on udemy Business \(link)")
                         }
                         return cell
-                    default:
-                        fatalError()
                 }
             }
         )
